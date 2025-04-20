@@ -35,7 +35,8 @@ def generate_summary(prompt, transcript, model="gpt-3.5-turbo"):
     response = client.chat.completions.create(
         model=model,
         messages=[
-            {"role": "system", "content": "You are a helpful assistant that summarizes video transcripts."},
+            {"role": "system", "content": "Watch the following YouTube video. Based on its content, generate a structured summary for educational and knowledge purposes. Break it down into:Objective Required Tools/Inputs (if any) Key Steps or Concepts Sub-tasks or Techniques (if applicable) Dependencies or Prerequisites Potential Pitfalls or Common Mistakes Make the summary clear, concise, and easy to follow, ideal for someone trying to learn or apply the knowledge."},
+
             {"role": "user", "content": full_prompt}
         ],
         temperature=0.5,
